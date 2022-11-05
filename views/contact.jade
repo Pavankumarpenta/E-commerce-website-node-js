@@ -1,0 +1,57 @@
+extends layout
+
+block content
+    
+    #contact-page.container
+        .bg
+            .row
+                .col-sm-12
+                    h2.title.text-center
+                        | Contact
+                        strong= ' Us'
+            .row
+                .col-sm-8
+                    .contact-form
+                        h2.title.text-center Get In Touch
+                        .status.alert.alert-success(style='display: none')
+                        form#main-contact-form.contact-form.row(action='/contact-us', method='POST')
+                            if customer
+                                .form-group.col-md-6
+                                    input.form-control(type='text', name='fullName', value=customer.FullName, required='required', placeholder='Name', disabled)
+                                .form-group.col-md-6
+                                    input.form-control(type='email', name='email', value= customer.Email, required='required', placeholder='Email', disabled)
+                            else
+                                .form-group.col-md-6
+                                    input.form-control(type='text', name='fullName', required='required', placeholder='Name')
+                                .form-group.col-md-6
+                                    input.form-control(type='email', name='email', required='required', placeholder='Email')
+                            .form-group.col-md-12
+                                input.form-control(type='text', name='subject', required='required', placeholder='Subject')
+                            .form-group.col-md-12
+                                textarea#message.form-control(name='contactMessage', required='required', rows='8', placeholder='Your Message Here')
+                            .form-group.col-md-12
+                                input.btn.btn-primary.pull-right(type='submit', name='submit', value='Submit')
+                .col-sm-4
+                    .contact-info
+                        h2.title.text-center Contact Info
+                        address
+                            p Ecommerce Website.
+                            p Lovely Professional University
+                            p Phagwara, Punjab
+                            p Mobile: +91 7095535462
+                            p Email: pavankumarpenta100@gmail.com
+                        .social-networks
+                            h2.title.text-center Social Networking
+                            ul
+                                li
+                                    a(href='https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569891%7Cb%7Cfacebook%20signin%7C&placement=&creative=589460569891&keyword=facebook%20signin&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221832%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-3821998899%26loc_physical_ms%3D9298609%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAjw8JKbBhBYEiwAs3sxN32U-K7Py3hk3sE-TRVOxb0QcIWIkXWawOhulC_E3eiVULoWVlemGxoC-ysQAvD_BwE')
+                                        i.fa.fa-facebook
+                                li
+                                    a(href='https://twitter.com/i/flow/login')
+                                        i.fa.fa-twitter
+                                li
+                                    a(href='https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fdirect%2Ft%2F340282366841710300949128386953800350189%2F%3Fhl%3Den%26__coig_login%3D1')
+                                        i.fa.fa-instagram
+                                li
+                                    a(href='https://www.youtube.com/')
+                                        i.fa.fa-youtube
